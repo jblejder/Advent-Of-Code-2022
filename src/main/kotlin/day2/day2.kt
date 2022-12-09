@@ -1,5 +1,8 @@
 package day2
 
+import AoCTask
+import runAoC
+
 val scores = mapOf(
     Game.Rock to 1,
     Game.Paper to 2,
