@@ -4,7 +4,7 @@ import AoCTask
 import runAoC
 
 
-val day5p1: AoCTask = { input: String ->
+private val day5p1: AoCTask = { input: String ->
     var stacks = mutableMapOf<Int, List<Char>>()
     var headerSize = 0
     val stacksRaw = input.lines().takeWhile {
@@ -43,7 +43,7 @@ val day5p1: AoCTask = { input: String ->
     stacks.keys.sorted().map { stacks[it]!!.last() }.joinToString("")
 }
 
-val day5p2: AoCTask = { input ->
+private val day5p2: AoCTask = { input ->
     var stacks = mutableMapOf<Int, List<Char>>()
     var headerSize = 0
     val stacksRaw = input.lines().takeWhile {

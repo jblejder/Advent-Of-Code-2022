@@ -1,4 +1,4 @@
-val day4p1: AoCTask = { input: String ->
+private val day4p1: AoCTask = { input: String ->
     input.lines().filter { it.isNotBlank() }.fold(0) { acc, item ->
         val sections = item.split(",")
         val first = sections[0].split("-").map { it.toInt() }
@@ -12,7 +12,7 @@ val day4p1: AoCTask = { input: String ->
     }
 }
 
-val day4p2: AoCTask = { input ->
+private val day4p2: AoCTask = { input ->
     input.lines().filter { it.isNotBlank() }.fold(0) { acc, item ->
         val sections = item.split(",")
         val first = sections[0].split("-").map { it.toInt() }

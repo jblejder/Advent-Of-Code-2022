@@ -4,7 +4,7 @@ import AoCTask
 import runAoC
 
 
-sealed class Item {
+private sealed class Item {
     abstract val path: String
     abstract val size: Int
 
@@ -23,7 +23,7 @@ sealed class Item {
     }
 }
 
-val day7p1: AoCTask = { input: String ->
+private val day7p1: AoCTask = { input: String ->
     val root = Item.Directory("/")
     var pwd: Item.Directory = root
 
@@ -68,7 +68,7 @@ val day7p1: AoCTask = { input: String ->
         .sumOf { doDeeper(0, it) }
 }
 
-fun doDeeper(acc: Int, dir: Item.Directory): Int {
+private fun doDeeper(acc: Int, dir: Item.Directory): Int {
     val size = dir.size
     var total = if (size <= 100000) {
         size
@@ -83,7 +83,7 @@ fun doDeeper(acc: Int, dir: Item.Directory): Int {
     return total + acc
 }
 
-val day7p2: AoCTask = { input ->
+private val day7p2: AoCTask = { input ->
     val root = Item.Directory("/")
     var pwd: Item.Directory = root
 

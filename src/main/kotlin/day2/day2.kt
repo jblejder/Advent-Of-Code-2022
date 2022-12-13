@@ -3,29 +3,29 @@ package day2
 import AoCTask
 import runAoC
 
-val scores = mapOf(
+private val scores = mapOf(
     Game.Rock to 1,
     Game.Paper to 2,
     Game.Scissors to 3
 )
 
-enum class Game {
+private enum class Game {
     Rock, Paper, Scissors
 }
 
-val mapO = mapOf(
+private val mapO = mapOf(
     "A" to Game.Rock,
     "B" to Game.Paper,
     "C" to Game.Scissors,
 )
 
-val mapM = mapOf(
+private val mapM = mapOf(
     "X" to Game.Rock,
     "Y" to Game.Paper,
     "Z" to Game.Scissors
 )
 
-fun itBeats(a: Game, b: Game): Int {
+private fun itBeats(a: Game, b: Game): Int {
     return when {
         a == b -> 3
         a == Game.Rock && b == Game.Paper -> 6
@@ -35,7 +35,7 @@ fun itBeats(a: Game, b: Game): Int {
     }
 }
 
-fun whatToPick(a: Game, b: String): Game {
+private fun whatToPick(a: Game, b: String): Game {
     return when (b) {
         "Y" -> a
         "Z" -> {
@@ -58,7 +58,7 @@ fun whatToPick(a: Game, b: String): Game {
     }
 }
 
-val day2p1: AoCTask = { input: String ->
+private val day2p1: AoCTask = { input: String ->
     input.lines()
         .filter { it.isNotEmpty() }
         .fold(0) { acc, line ->
@@ -72,7 +72,7 @@ val day2p1: AoCTask = { input: String ->
         }
 }
 
-val day2p2: AoCTask = { input ->
+private val day2p2: AoCTask = { input ->
     input.lines()
         .filter { it.isNotEmpty() }
         .fold(0) { acc, line ->

@@ -4,7 +4,7 @@ import AoCTask
 import runAoC
 
 
-val testInput = """
+private val testInput = """
     30373
     25512
     65332
@@ -13,7 +13,7 @@ val testInput = """
 """.trimIndent()
 
 
-val day8p1: AoCTask = { input: String ->
+private val day8p1: AoCTask = { input: String ->
     val trees = mutableListOf<MutableList<Int>>()
 
     input.lines().filter { it.isNotEmpty() }
@@ -36,7 +36,7 @@ val day8p1: AoCTask = { input: String ->
     visible
 }
 
-fun isVisible(trees: MutableList<MutableList<Int>>, x: Int, y: Int): Boolean {
+private fun isVisible(trees: MutableList<MutableList<Int>>, x: Int, y: Int): Boolean {
     if (x == 0 || y == 0 || x == trees.size - 1 || y == trees[x].size - 1) return true
 
     var isVisible = true
@@ -75,7 +75,7 @@ fun isVisible(trees: MutableList<MutableList<Int>>, x: Int, y: Int): Boolean {
 }
 
 
-val day8p2: AoCTask = { input ->
+private val day8p2: AoCTask = { input ->
     val trees = mutableListOf<MutableList<Int>>()
 
     input.lines().filter { it.isNotEmpty() }
@@ -97,7 +97,7 @@ val day8p2: AoCTask = { input ->
     max
 }
 
-fun score(trees: MutableList<MutableList<Int>>, x: Int, y: Int): Long {
+private fun score(trees: MutableList<MutableList<Int>>, x: Int, y: Int): Long {
 
     if (x == 1 && y == 2) {
         println()

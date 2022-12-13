@@ -4,7 +4,7 @@ import AoCTask
 import runAoC
 
 
-val day6p1: AoCTask = { input: String ->
+private val day6p1: AoCTask = { input: String ->
     val data = mutableListOf<Char>()
     var size = 0
     input.forEach {
@@ -17,7 +17,7 @@ val day6p1: AoCTask = { input: String ->
     size
 }
 
-val day6p2: AoCTask = { input ->
+private val day6p2: AoCTask = { input ->
     val data = mutableListOf<Char>()
     var size = 0
     input.forEach {

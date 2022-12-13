@@ -4,7 +4,7 @@ import AoCTask
 import runAoC
 import kotlin.math.abs
 
-val testInput = """
+private val testInput = """
     R 4
     U 4
     L 3
@@ -14,10 +14,7 @@ val testInput = """
     L 5
     R 2
 """.trimIndent()
-
-data class Point(val x: Int, val y: Int)
-
-fun vector(txt: String, lenght: Int): Point {
+private fun vector(txt: String, lenght: Int): Point {
     return when (txt) {
         "R" -> Point(lenght, 0)
         "U" -> Point(0, lenght)
@@ -27,13 +24,15 @@ fun vector(txt: String, lenght: Int): Point {
     }
 }
 
-operator fun Point.plus(other: Point): Point =
+private data class Point(val x: Int, val y: Int)
+
+private operator fun Point.plus(other: Point): Point =
     Point(this.x + other.x, this.y + other.y)
 
-operator fun Point.minus(other: Point): Point =
+private operator fun Point.minus(other: Point): Point =
     Point(this.x - other.x, this.y - other.y)
 
-fun Point.norm(): Point {
+private fun Point.norm(): Point {
     fun Int.norm(): Int {
         return if (this == 0) 0
         else this / abs(this)
@@ -41,7 +40,7 @@ fun Point.norm(): Point {
     return Point(x.norm(), y.norm())
 }
 
-val day9p1: AoCTask = { input: String ->
+private val day9p1: AoCTask = { input: String ->
     var head = Point(0, 0)
     var tail = Point(0, 0)
     val visited = mutableSetOf(tail)
@@ -64,7 +63,7 @@ val day9p1: AoCTask = { input: String ->
 }
 
 
-fun print(set: Set<Point>) {
+private fun print(set: Set<Point>) {
     val minX = set.minOf { it.x }
     val maxX = set.maxOf { it.x }
     val minY = set.minOf { it.y }
@@ -84,8 +83,7 @@ fun print(set: Set<Point>) {
 
 }
 
-
-val testInput2 = """
+private val testInput2 = """
     R 5
     U 8
     L 8
@@ -96,7 +94,7 @@ val testInput2 = """
     U 20
 """.trimIndent()
 
-val day9p2: AoCTask = { input ->
+private val day9p2: AoCTask = { input ->
     var snake = mutableListOf<Point>()
     repeat(10) { snake.add(Point(0, 0)) }
     val visited = mutableSetOf(snake.last())
